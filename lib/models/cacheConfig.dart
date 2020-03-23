@@ -1,24 +1,21 @@
-import 'package:json_annotation/json_annotation.dart';
-
-part 'cache_config.g.dart';
-
-
-@JsonSerializable()
-class cacheConfig extends Object with _$cacheConfigSerializerMixin{
-
-  @JsonKey(name: 'enable')
+class CacheConfig {
   bool enable;
-
-  @JsonKey(name: 'maxAge')
   int maxAge;
-
-  @JsonKey(name: 'maxCount')
   int maxCount;
 
-  cacheConfig(this.enable,this.maxAge,this.maxCount,);
+  CacheConfig({this.enable, this.maxAge, this.maxCount});
 
-  factory cacheConfig.fromJson(Map<String, dynamic> srcJson) => _$cacheConfigFromJson(srcJson);
+  CacheConfig.fromJson(Map<String, dynamic> json) {
+    enable = json['enable'];
+    maxAge = json['maxAge'];
+    maxCount = json['maxCount'];
+  }
 
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['enable'] = this.enable;
+    data['maxAge'] = this.maxAge;
+    data['maxCount'] = this.maxCount;
+    return data;
+  }
 }
-
-
