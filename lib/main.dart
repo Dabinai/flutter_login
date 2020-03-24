@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutterlogin/common/Global.dart';
+import 'package:flutterlogin/routes/language_route.dart';
+import 'package:flutterlogin/routes/login_route.dart';
+import 'package:flutterlogin/routes/themeChange_route.dart';
 import 'package:provider/provider.dart';
 
 void main() => Global.init().then((value) =>  runApp(MyApp()));
